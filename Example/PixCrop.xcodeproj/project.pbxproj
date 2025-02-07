@@ -41,12 +41,12 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		62EEEACD986F609A5E80A826 /* Pods_PixCrop_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixCrop_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AEE36BDEADA97FD5FF2C5FD /* Pods-PixCrop_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixCrop_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PixCrop_Tests/Pods-PixCrop_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		816B905F0BAA37A6F8AF354F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		816B905F0BAA37A6F8AF354F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9039AD21D2FA44A18BD4E48D /* Pods-PixCrop_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixCrop_Tests.release.xcconfig"; path = "Target Support Files/Pods-PixCrop_Tests/Pods-PixCrop_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D3FD8C5A00D3D3F2AD93349C /* Pods_PixCrop_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixCrop_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C9871A41351FA32EBCB5B6 /* Pods-PixCrop_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixCrop_Example.debug.xcconfig"; path = "Target Support Files/Pods-PixCrop_Example/Pods-PixCrop_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F2DAF99FCDCF788272A230EC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		FADBA8A6D21A3A8DB5A653B0 /* PixCrop.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = PixCrop.podspec; path = ../PixCrop.podspec; sourceTree = "<group>"; };
+		F2DAF99FCDCF788272A230EC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FADBA8A6D21A3A8DB5A653B0 /* PixCrop.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PixCrop.podspec; path = ../PixCrop.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,6 @@
 				6AEE36BDEADA97FD5FF2C5FD /* Pods-PixCrop_Tests.debug.xcconfig */,
 				9039AD21D2FA44A18BD4E48D /* Pods-PixCrop_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -478,6 +478,7 @@
 			baseConfigurationReference = E4C9871A41351FA32EBCB5B6 /* Pods-PixCrop_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = PixCrop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +494,7 @@
 			baseConfigurationReference = 4DA284D1F3815F089B985CB3 /* Pods-PixCrop_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = PixCrop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

@@ -1,0 +1,16 @@
+PODS:
+  - PixCrop (0.1.0)
+
+DEPENDENCIES:
+  - PixCrop (from `../`)
+
+EXTERNAL SOURCES:
+  PixCrop:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PixCrop: 65dced061d9a3c76812a04d27d0bf1274207e45b
+
+PODFILE CHECKSUM: d34de8aeda4c2d67c1c84da3b83f4d0be2ab2449
+
+COCOAPODS: 1.16.2

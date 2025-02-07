@@ -1,0 +1,6 @@
+framework module Pods_PixCrop_Tests {
+  umbrella header "Pods-PixCrop_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
