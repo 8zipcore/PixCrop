@@ -65,7 +65,7 @@ public class PixCropResultView: UIView{
         let previousFrameSize = PixCropFrame.size
         let newFrameSize = LayoutUtils.scaledSizeToFit(
             size: PixCropFrame.size,
-            viewSize: self.frame.size
+            viewSize: viewSize
         )
         /* Image ZoomScale 변환 */
         var newZoomScale = PixCropImage.zoomScale
