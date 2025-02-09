@@ -23,7 +23,7 @@ public class PixCropResultView: UIView{
         }
     }
     
-    override public init(frame: CGRect) {
+    override private init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -31,20 +31,24 @@ public class PixCropResultView: UIView{
         self.init(frame: .zero)
         self.image = image
         imageView.setImage(image)
+        
+        addView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    public override func draw(_ rect: CGRect) {
+    public override func layoutSubviews() {
         initView()
     }
     
-    private func initView(){
+    private func addView(){
         self.addSubview(imageView)
         self.addSubview(overlayView)
-        
+    }
+    
+    private func initView(){
         self.overlayView.frame = CGRect(origin: .zero, size: self.frame.size)
         self.overlayView.overlayColor = overlayColor
         

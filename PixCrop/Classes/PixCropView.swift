@@ -23,6 +23,8 @@ public class PixCropView: UIView {
     public var image = UIImage(){
         didSet{
             imageView.setImage(image)
+            initPixCropImage()
+            initPixCropFrame()
         }
     }
     
@@ -35,22 +37,20 @@ public class PixCropView: UIView {
     
     private var padding: CGFloat = 10
          
-    override public init(frame: CGRect) {
+    override private init(frame: CGRect) {
         super.init(frame: frame)
-        initView()
     }
     
     convenience public init(frame: CGRect, image: UIImage){
         self.init(frame: frame)
         self.image = image
+        imageView.setImage(image)
+        
+        initView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    public override func draw(_ rect: CGRect) {
-        initView()
     }
     
     private func initView(){
@@ -58,10 +58,28 @@ public class PixCropView: UIView {
         self.addSubview(overlayView)
         self.addSubview(frameView)
         
+        overlayView.frame = CGRect(origin: .zero, size: self.frame.size)
+        
+        initPixCropImage()
+        initPixCropFrame()
+        
+        updateFrameView()
+        
+        configureView()
+    }
+    
+    private func configureView(){
+        frameView.delegate = self
+        
+        self.clipsToBounds = true
+        self.backgroundColor = .white
+    }
+    
+    private func initPixCropImage(){
         let viewSize = self.frame.size
         let viewCenter = LayoutUtils.center(for: viewSize)
         
-        overlayView.frame = CGRect(origin: .zero, size: viewSize)
+        PixCropImage.reset()
         
         PixCropImage.originalSize = LayoutUtils.scaledSizeToFit(size: image.size,
                                     viewSize: viewSizeWithoutPadding())
@@ -74,6 +92,13 @@ public class PixCropView: UIView {
         )
         
         updateImageView()
+    }
+    
+    private func initPixCropFrame(){
+        let viewSize = self.frame.size
+        let viewCenter = LayoutUtils.center(for: viewSize)
+        
+        PixCropFrame.reset()
         
         PixCropFrame.update(
             size: PixCropImage.originalSize,
@@ -85,15 +110,6 @@ public class PixCropView: UIView {
         PixCropFrame.minHeight = viewSize.height * 0.2
         
         updateFrameView()
-        
-        configureView()
-    }
-    
-    private func configureView(){
-        frameView.delegate = self
-        
-        self.clipsToBounds = true
-        self.backgroundColor = .white
     }
     
     private func updateFrameView(){

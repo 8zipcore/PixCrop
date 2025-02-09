@@ -97,6 +97,19 @@ struct PixCropImage{
         return CGPoint(x: centerX + halfWidth * xScale,
                        y: centerY + halfHeight * yScale)
     }
+    
+    static func reset(){
+        center = .zero
+        lastCenter = .zero
+        zoomScale = 1.0
+        lastZoomScale = 1.0
+        transformScale = CGPoint(x: 1, y: 1)
+        originalSize = .zero
+        size = .zero
+        degree = .zero
+        isFlippedHorizontally = false
+        isFlippedVertically = false
+    }
 }
 
 enum PixCropRotateDirection{

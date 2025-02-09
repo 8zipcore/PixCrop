@@ -70,4 +70,16 @@ struct PixCropFrame{
     static func position(for location: LocationType) -> CGPoint{
         return position(for: location, size, center)
     }
+    
+    static func reset(){
+        width = .zero
+        height = .zero
+        
+        lastSize = .zero
+        center = .zero
+        lastCenter = .zero
+        
+        minWidth = .zero
+        minHeight = .zero
+    }
 }
