@@ -60,7 +60,6 @@ public class PixCropResultView: UIView{
     }
     
     private func configureView(){
-        let viewSize = self.frame.size
         let viewCenter = self.center
         let previousFrameSize = PixCropFrame.size
         let newFrameSize = LayoutUtils.scaledSizeToFit(
