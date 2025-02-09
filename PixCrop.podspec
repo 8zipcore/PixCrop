@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PixCrop'
-  s.version          = '0.4.0'
+  s.version          = '1.0.0'
   s.ios.deployment_target = '13.0'
   s.swift_versions = '5.0'
   s.summary          = 'Image Editing library'
