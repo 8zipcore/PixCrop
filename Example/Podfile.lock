@@ -1,16 +1,21 @@
 PODS:
-  - PixCrop (0.1.0)
+  - PixCrop (0.1.0):
+    - SnapKit (>= 5.0.0)
+  - SnapKit (5.7.1)
 
 DEPENDENCIES:
-  - PixCrop (from `../`)
+  - PixCrop
+  - SnapKit
 
-EXTERNAL SOURCES:
-  PixCrop:
-    :path: "../"
+SPEC REPOS:
+  trunk:
+    - PixCrop
+    - SnapKit
 
 SPEC CHECKSUMS:
-  PixCrop: 65dced061d9a3c76812a04d27d0bf1274207e45b
+  PixCrop: 6923b586af8b6d17174d7e5f39e4296d8dd6a265
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: d34de8aeda4c2d67c1c84da3b83f4d0be2ab2449
+PODFILE CHECKSUM: f64aff1f5d1d1b26f8f0af3695259ffa3c37c7a3
 
 COCOAPODS: 1.16.2
