@@ -35,7 +35,7 @@ public class PixCropView: UIView {
     private var pixCropFrame = PixCropFrameManager()
     private var pixCropImage = PixCropImageManager()
     
-    private var padding: CGFloat = 10
+    private var padding: CGFloat = 25
          
     override private init(frame: CGRect) {
         super.init(frame: frame)
