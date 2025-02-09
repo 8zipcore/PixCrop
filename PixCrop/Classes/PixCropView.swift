@@ -15,7 +15,7 @@ protocol PixCropImageTransformable {
     func flipHorizontally()
     func flipVertically()
     func ratio(ratio: CGSize)
-    func pixCropEnded() -> PixCropResultView
+    func pixCropEnded(frame: CGRect) -> PixCropResultView
 }
 
 public class PixCropView: UIView {
@@ -27,6 +27,8 @@ public class PixCropView: UIView {
             initPixCropFrame()
         }
     }
+    
+    public var maskSize: CGSize = .zero
     
     private var imageView = PixCropImageView(frame: .zero)
     private var frameView = PixCropFrameView()
@@ -123,6 +125,8 @@ public class PixCropView: UIView {
                 centerPosition: PixCropFrame.center
             )
         )
+        
+        maskSize = PixCropFrame.size
     }
     
     private func updateImageView(){
@@ -220,10 +224,11 @@ extension PixCropView: PixCropImageTransformable{
         updateView()
     }
     
-    public func pixCropEnded() -> PixCropResultView{
-        let newFrameSize = LayoutUtils.scaledSizeToFit(size: PixCropFrame.size, viewSize: self.frame.size)
-        let resultView = PixCropResultView(image: self.image)
+    public func pixCropEnded(frame: CGRect) -> PixCropResultView{
+        let newFrameSize = LayoutUtils.scaledSizeToFit(size: PixCropFrame.size, viewSize: frame.size)
+        let resultView = PixCropResultView(frame: frame, image: self.image)
         resultView.frame.size = newFrameSize
+        maskSize = newFrameSize
         return resultView
     }
 }
