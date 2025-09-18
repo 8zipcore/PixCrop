@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol PixCropFrameViewDragDelegate {
+protocol PixCropFrameViewDragDelegate: AnyObject {
   func frameViewDragging(translation: CGPoint)
   func frameViewDragEnded()
   func frameViewZoomming(scale: CGFloat)
@@ -25,7 +25,7 @@ class PixCropFrameView: UIView {
   private let selectionBoxLineWidth = SelectionBox().lineWidth
   private let selectionBoxSize = SelectionBox().boxSize
   
-  var delegate: PixCropFrameViewDragDelegate?
+  weak var delegate: PixCropFrameViewDragDelegate?
   
   private var initailized = false
   
