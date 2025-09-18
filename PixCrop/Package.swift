@@ -23,13 +23,8 @@ let package = Package(
             ],
             path: "Sources/PixCrop",
             resources: [
-                .process("Assets")
+                .process("../Assets")
             ]
-        ),
-        .testTarget(
-            name: "PixCropTests",
-            dependencies: ["PixCrop"],
-            path: "Tests/PixCropTests"
         )
     ]
 )
