@@ -5,7 +5,7 @@
 //  Created by 홍승아 on 1/24/25.
 //
 
-import Foundation
+import UIKit
 
 struct PixCropFrame{
     static var width: CGFloat = .zero

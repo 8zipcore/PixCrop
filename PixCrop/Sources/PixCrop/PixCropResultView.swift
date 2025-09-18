@@ -5,7 +5,7 @@
 //  Created by 홍승아 on 2/5/25.
 //
 
-import Foundation
+import UIKit
 
 public class PixCropResultView: UIView{
     public var imageView = PixCropImageView(frame: .zero)

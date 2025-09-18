@@ -5,7 +5,7 @@
 //  Created by 홍승아 on 1/10/25.
 //
 
-import Foundation
+import UIKit
 
 extension UIImageView{
     func flip(_ transformScale: CGPoint){

@@ -5,7 +5,7 @@
 //  Created by 홍승아 on 1/31/25.
 //
 
-import Foundation
+import UIKit
 
 public class PixCropImageView: UIImageView{
     
